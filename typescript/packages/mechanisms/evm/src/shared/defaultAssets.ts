@@ -31,6 +31,11 @@ export type ExactDefaultAssetInfo = DefaultAssetInfo & {
    * sign a gasless EIP-2612 permit for Permit2 approval.
    */
   supportsEip2612?: boolean;
+  /**
+   * Additional supported assets for this network (e.g. secondary stablecoins).
+   * Useful when a chain has multiple stablecoins but only one default.
+   */
+  supportedAssets?: Record<string, ExactDefaultAssetInfo>;
 };
 
 /**
@@ -126,7 +131,23 @@ export const DEFAULT_STABLECOINS: Record<string, ExactDefaultAssetInfo> = {
     name: "USDC.e",
     version: "2",
     decimals: 6,
-  }, // ADI Chain USDC.e (EIP-3009 supported)
+    supportedAssets: {
+      DDSC: {
+        address: "0x1211f0cfe66739433c1330e21f4951B80E813479",
+        name: "DDSC",
+        version: "1",
+        decimals: 6,
+        assetTransferMethod: "permit2",
+      }, // ADI Chain DDSC (no EIP-3009, no EIP-2612, requires ERC-20 approval)
+    },
+  }, // ADI Chain USDC.e (EIP-3009 supported) + DDSC (Permit2 fallback)
+  "eip155:99999": {
+    address: "0x1211f0cfe66739433c1330e21f4951B80E813479",
+    name: "DDSC",
+    version: "1",
+    decimals: 6,
+    assetTransferMethod: "permit2",
+  }, // ADI Testnet DDSC (no EIP-3009, no EIP-2612, requires ERC-20 approval)
 };
 
 /**

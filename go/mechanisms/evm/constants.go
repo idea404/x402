@@ -83,6 +83,7 @@ var (
 	ChainIDRadius        = big.NewInt(723487)
 	ChainIDRadiusTestnet = big.NewInt(72344)
 	ChainIDADI           = big.NewInt(36900)
+	ChainIDADITestnet    = big.NewInt(99999)
 
 	// Network configurations
 	// See DEFAULT_ASSET.md for guidelines on adding new chains
@@ -232,6 +233,26 @@ var (
 				Name:     "USDC.e",
 				Version:  "2",
 				Decimals: DefaultDecimals,
+			},
+			SupportedAssets: map[string]AssetInfo{
+				"DDSC": {
+					Address:             "0x1211f0cfe66739433c1330e21f4951B80E813479", // DDSC on ADI Chain
+					Name:                "DDSC",
+					Version:             "1",
+					Decimals:            DefaultDecimals,
+					AssetTransferMethod: AssetTransferMethodPermit2,
+				}, // DDSC (no EIP-3009, no EIP-2612, requires ERC-20 approval)
+			},
+		},
+		// ADI Testnet
+		"eip155:99999": {
+			ChainID: ChainIDADITestnet,
+			DefaultAsset: AssetInfo{
+				Address:             "0x1211f0cfe66739433c1330e21f4951B80E813479", // DDSC on ADI Testnet
+				Name:                "DDSC",
+				Version:             "1",
+				Decimals:            DefaultDecimals,
+				AssetTransferMethod: AssetTransferMethodPermit2,
 			},
 		},
 	}
