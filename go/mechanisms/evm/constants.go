@@ -239,11 +239,10 @@ var (
 		"eip155:99999": {
 			ChainID: ChainIDADITestnet,
 			DefaultAsset: AssetInfo{
-				Address:             "0x0C189aa5cE517aE3Ce24015F042D405141011634", // USDC.e on ADI Testnet
-				Name:                "USDC.e",
-				Version:             "1",
-				Decimals:            DefaultDecimals,
-				AssetTransferMethod: AssetTransferMethodPermit2,
+				Address:  "0x0C189aa5cE517aE3Ce24015F042D405141011634", // USDC.e on ADI Testnet
+				Name:     "USDC.e",
+				Version:  "1",
+				Decimals: DefaultDecimals,
 			},
 		},
 	}

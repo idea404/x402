@@ -546,7 +546,6 @@ NETWORK_CONFIGS: dict[str, NetworkConfig] = {
             "name": "USDC.e",
             "version": "1",
             "decimals": 6,
-            "asset_transfer_method": "permit2",
         },
     },
 }

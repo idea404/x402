@@ -132,8 +132,7 @@ export const DEFAULT_STABLECOINS: Record<string, ExactDefaultAssetInfo> = {
     name: "USDC.e",
     version: "1",
     decimals: 6,
-    assetTransferMethod: "permit2",
-  }, // ADI Testnet USDC.e (no EIP-3009, no EIP-2612, requires ERC-20 approval)
+  }, // ADI Testnet USDC.e (EIP-3009 supported)
 };
 
 /**
