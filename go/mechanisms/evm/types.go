@@ -308,9 +308,8 @@ type AssetInfo struct {
 // NetworkConfig contains network-specific configuration
 // See DEFAULT_ASSET.md for guidelines on adding new chains
 type NetworkConfig struct {
-	ChainID        *big.Int
-	DefaultAsset   AssetInfo
-	SupportedAssets map[string]AssetInfo // Additional supported assets (e.g. secondary stablecoins)
+	ChainID      *big.Int
+	DefaultAsset AssetInfo
 }
 
 // PayloadToMap converts an ExactEIP3009Payload to a map for JSON marshaling

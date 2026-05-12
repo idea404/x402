@@ -31,11 +31,6 @@ export type ExactDefaultAssetInfo = DefaultAssetInfo & {
    * sign a gasless EIP-2612 permit for Permit2 approval.
    */
   supportsEip2612?: boolean;
-  /**
-   * Additional supported assets for this network (e.g. secondary stablecoins).
-   * Useful when a chain has multiple stablecoins but only one default.
-   */
-  supportedAssets?: Record<string, ExactDefaultAssetInfo>;
 };
 
 /**
@@ -126,22 +121,20 @@ export const DEFAULT_STABLECOINS: Record<string, ExactDefaultAssetInfo> = {
     assetTransferMethod: "permit2",
     supportsEip2612: true,
   }, // Radius Testnet SBC (no EIP-3009, supports EIP-2612)
-  "eip155:36900": {
+"eip155:36900": {
     address: "0x9cb8142aEBBcdc60AF7c97Af897A67A8f3CA71C2",
     name: "USDC.e",
     version: "2",
     decimals: 6,
-    supportedAssets: {
-      DDSC: {
-        address: "0x1211f0cfe66739433c1330e21f4951B80E813479",
-        name: "DDSC",
-        version: "1",
-        decimals: 6,
-        assetTransferMethod: "permit2",
-      }, // ADI Chain DDSC (no EIP-3009, no EIP-2612, requires ERC-20 approval)
-    },
-  }, // ADI Chain USDC.e (EIP-3009 supported) + DDSC (Permit2 fallback)
- };
+  }, // ADI Chain USDC.e (EIP-3009 supported)
+  "eip155:99999": {
+    address: "0x0C189aa5cE517aE3Ce24015F042D405141011634",
+    name: "USDC.e",
+    version: "1",
+    decimals: 6,
+    assetTransferMethod: "permit2",
+  }, // ADI Testnet USDC.e (no EIP-3009, no EIP-2612, requires ERC-20 approval)
+};
 
 /**
  * Look up the default stablecoin for a network.

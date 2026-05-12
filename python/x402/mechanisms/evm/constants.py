@@ -388,7 +388,6 @@ class NetworkConfig(_NetworkConfigRequired, total=False):
     """Configuration for an EVM network."""
 
     default_asset: AssetInfo
-    supported_assets: dict[str, AssetInfo]
 
 
 # Network configurations
@@ -538,14 +537,16 @@ NETWORK_CONFIGS: dict[str, NetworkConfig] = {
             "version": "2",
             "decimals": 6,
         },
-        "supported_assets": {
-            "DDSC": {
-                "address": "0x1211f0cfe66739433c1330e21f4951B80E813479",
-                "name": "DDSC",
-                "version": "1",
-                "decimals": 6,
-                "asset_transfer_method": "permit2",
-            },
+    },
+    # ADI Testnet
+    "eip155:99999": {
+        "chain_id": 99999,
+        "default_asset": {
+            "address": "0x0C189aa5cE517aE3Ce24015F042D405141011634",
+            "name": "USDC.e",
+            "version": "1",
+            "decimals": 6,
+            "asset_transfer_method": "permit2",
         },
     },
 }
