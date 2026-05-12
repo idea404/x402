@@ -141,14 +141,7 @@ export const DEFAULT_STABLECOINS: Record<string, ExactDefaultAssetInfo> = {
       }, // ADI Chain DDSC (no EIP-3009, no EIP-2612, requires ERC-20 approval)
     },
   }, // ADI Chain USDC.e (EIP-3009 supported) + DDSC (Permit2 fallback)
-  "eip155:99999": {
-    address: "0x1211f0cfe66739433c1330e21f4951B80E813479",
-    name: "DDSC",
-    version: "1",
-    decimals: 6,
-    assetTransferMethod: "permit2",
-  }, // ADI Testnet DDSC (no EIP-3009, no EIP-2612, requires ERC-20 approval)
-};
+ };
 
 /**
  * Look up the default stablecoin for a network.
