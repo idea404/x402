@@ -120,14 +120,14 @@ export const DEFAULT_STABLECOINS: Record<string, ExactDefaultAssetInfo> = {
     decimals: 6,
     assetTransferMethod: "permit2",
     supportsEip2612: true,
-  }, // Radius Testnet SBC (no EIP-3009, supports EIP-2612)
-"eip155:36900": {
+ }, // Radius Testnet SBC (no EIP-3009, supports EIP-2612)
+  "eip155:36900": {
     address: "0x9cb8142aEBBcdc60AF7c97Af897A67A8f3CA71C2",
     name: "USDC.e",
     version: "2",
     decimals: 6,
   }, // ADI Chain USDC.e (EIP-3009 supported)
-  };
+};
 
 /**
  * Look up the default stablecoin for a network.
