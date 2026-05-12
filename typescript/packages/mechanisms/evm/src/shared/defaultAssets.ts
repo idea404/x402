@@ -127,13 +127,7 @@ export const DEFAULT_STABLECOINS: Record<string, ExactDefaultAssetInfo> = {
     version: "2",
     decimals: 6,
   }, // ADI Chain USDC.e (EIP-3009 supported)
-  "eip155:99999": {
-    address: "0x0C189aa5cE517aE3Ce24015F042D405141011634",
-    name: "USDC.e",
-    version: "1",
-    decimals: 6,
-  }, // ADI Testnet USDC.e (EIP-3009 supported)
-};
+  };
 
 /**
  * Look up the default stablecoin for a network.

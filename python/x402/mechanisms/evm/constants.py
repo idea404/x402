@@ -538,17 +538,7 @@ NETWORK_CONFIGS: dict[str, NetworkConfig] = {
             "decimals": 6,
         },
     },
-    # ADI Testnet
-    "eip155:99999": {
-        "chain_id": 99999,
-        "default_asset": {
-            "address": "0x0C189aa5cE517aE3Ce24015F042D405141011634",
-            "name": "USDC.e",
-            "version": "1",
-            "decimals": 6,
-        },
-    },
-}
+ }
 
 # V1 legacy constants are in x402.mechanisms.evm.v1.constants
 # (V1_NETWORKS, V1_NETWORK_CHAIN_IDS, V1_DEFAULT_ASSETS)

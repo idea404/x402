@@ -83,7 +83,6 @@ var (
 	ChainIDRadius        = big.NewInt(723487)
 	ChainIDRadiusTestnet = big.NewInt(72344)
 	ChainIDADI           = big.NewInt(36900)
-	ChainIDADITestnet    = big.NewInt(99999)
 
 	// Network configurations
 	// See DEFAULT_ASSET.md for guidelines on adding new chains
@@ -232,16 +231,6 @@ var (
 				Address:  "0x9cb8142aEBBcdc60AF7c97Af897A67A8f3CA71C2", // USDC.e on ADI Chain
 				Name:     "USDC.e",
 				Version:  "2",
-				Decimals: DefaultDecimals,
-			},
-		},
-		// ADI Testnet
-		"eip155:99999": {
-			ChainID: ChainIDADITestnet,
-			DefaultAsset: AssetInfo{
-				Address:  "0x0C189aa5cE517aE3Ce24015F042D405141011634", // USDC.e on ADI Testnet
-				Name:     "USDC.e",
-				Version:  "1",
 				Decimals: DefaultDecimals,
 			},
 		},
